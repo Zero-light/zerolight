@@ -12,7 +12,7 @@ export const terms: Term[] = [
     word: "光",
     en: "Light",
     def: "界面最初的隐喻。我们不让一切闪耀，只让真正重要的东西发光——光的方向，就是注意力的方向。",
-    post: { slug: "light-as-interface-metaphor", title: "光与界面的隐喻" },
+    post: { slug: "lumen-grid", title: "Lumen Grid", kind: "work" },
   },
   {
     slug: "zero",
@@ -87,6 +87,6 @@ export const terms: Term[] = [
     word: "语气",
     en: "Voice",
     def: "字体与字距替我们说出的那句话。在用户读到第一个字之前，语气已经到达。",
-    post: { slug: "typeface-is-a-voice", title: "字体即语气" },
+    post: { slug: "whisper-type", title: "Whisper Type", kind: "work" },
   },
 ];
