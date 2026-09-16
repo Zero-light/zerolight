@@ -27,6 +27,11 @@ export const metadata: Metadata = {
     title: "zerolight",
     description: "以光为尺，设计克制。",
   },
+  appleWebApp: {
+    title: "zerolight",
+    statusBarStyle: "black-translucent",
+  },
+  applicationName: "zerolight",
 };
 
 export const viewport: Viewport = {

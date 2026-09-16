@@ -24,8 +24,12 @@ export async function generateMetadata({
 }
 
 export default function PostPage({ params }: { params: Params }) {
-  const post = posts.find((p) => p.slug === params.slug);
+  const index = posts.findIndex((p) => p.slug === params.slug);
+  const post = posts[index];
   if (!post) notFound();
+
+  const prev = posts[(index - 1 + posts.length) % posts.length];
+  const next = posts[(index + 1) % posts.length];
 
   return (
     <div className="pt-36 pb-24 md:pt-44">
@@ -51,7 +55,29 @@ export default function PostPage({ params }: { params: Params }) {
 
         <div className="hairline my-14" />
 
-        <div className="flex items-center justify-between">
+        {/* 上下篇导航 */}
+        <div className="grid gap-4 sm:grid-cols-2">
+          <Link
+            href={`/journal/${prev.slug}`}
+            className="group rounded-2xl border border-line p-6 transition-colors hover:border-ember/30"
+          >
+            <p className="num-label">← 上一篇</p>
+            <p className="mt-2 text-[16px] font-medium tracking-tight text-ink transition-colors group-hover:text-ember">
+              {prev.title}
+            </p>
+          </Link>
+          <Link
+            href={`/journal/${next.slug}`}
+            className="group rounded-2xl border border-line p-6 text-right transition-colors hover:border-ember/30"
+          >
+            <p className="num-label">下一篇 →</p>
+            <p className="mt-2 text-[16px] font-medium tracking-tight text-ink transition-colors group-hover:text-ember">
+              {next.title}
+            </p>
+          </Link>
+        </div>
+
+        <div className="mt-10 flex items-center justify-between">
           <Link
             href="/journal"
             className="group inline-flex items-center gap-2 text-[14px] text-muted transition-colors hover:text-ember"

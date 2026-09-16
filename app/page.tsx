@@ -182,7 +182,7 @@ export default function Home() {
             <SectionHead
               index="03 / 日志"
               title="设计随笔"
-              sub="关于留白、深色界面与光的隐喻。"
+              sub="关于留白、深色界面、动效与光的隐喻。宁缺毋滥，不定期更新。"
             />
           </Reveal>
 

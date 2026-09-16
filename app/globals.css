@@ -220,7 +220,25 @@ body {
     opacity: 1;
     transform: none;
   }
-  .glow-text {
+  .glow-text,
+  .light-on,
+  .stardust {
     animation: none;
+  }
+  .stardust {
+    opacity: 0.7;
+  }
+  .animate-slow-pulse,
+  .animate-slow-drift,
+  .animate-fade-up,
+  .animate-shimmer {
+    animation: none;
+  }
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
   }
 }
