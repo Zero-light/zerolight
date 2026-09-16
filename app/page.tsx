@@ -14,6 +14,7 @@ export default function Home() {
     <div>
       {/* ---------- Hero ---------- */}
       <section className="relative flex min-h-[92vh] flex-col justify-center overflow-hidden">
+        <div className="stardust" aria-hidden />
         <div className="mx-auto w-full max-w-6xl px-6 md:px-8">
           <Reveal>
             <p className="num-label flex items-center gap-3">
@@ -23,7 +24,7 @@ export default function Home() {
           </Reveal>
 
           <Reveal delay={120}>
-            <h1 className="mt-8 select-none text-[clamp(4rem,17vw,12.5rem)] font-semibold leading-[0.92] tracking-tightest glow-text">
+            <h1 className="light-on mt-8 select-none text-[clamp(4rem,17vw,12.5rem)] font-semibold leading-[0.92] tracking-tightest glow-text">
               zerolight
             </h1>
           </Reveal>

@@ -5,7 +5,7 @@ import ProjectVisual from "./project-visual";
 export default function ProjectCard({ project }: { project: Project }) {
   return (
     <Link
-      href={`/works#${project.slug}`}
+      href={`/works/${project.slug}`}
       className="glass glass-hover block overflow-hidden rounded-2xl"
     >
       <ProjectVisual project={project} />

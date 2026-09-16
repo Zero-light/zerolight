@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import ReadingProgress from "@/components/reading-progress";
 import { posts } from "@/lib/posts";
 
 type Params = { slug: string };
@@ -28,6 +29,7 @@ export default function PostPage({ params }: { params: Params }) {
 
   return (
     <div className="pt-36 pb-24 md:pt-44">
+      <ReadingProgress />
       <article className="mx-auto max-w-3xl px-6 md:px-8">
         <p className="num-label">
           {post.tag} · {post.date} · {post.readTime}

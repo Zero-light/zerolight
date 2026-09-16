@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import Reveal from "@/components/reveal";
 import ProjectVisual from "@/components/project-visual";
 import { projects } from "@/lib/projects";
@@ -23,36 +24,39 @@ export default function WorksPage() {
           </p>
         </Reveal>
 
-        <div className="mt-20 space-y-16 md:space-y-24">
+        <div className="mt-20 space-y-5">
           {projects.map((p, i) => (
-            <Reveal key={p.slug}>
-              <article
-                id={p.slug}
-                className="scroll-mt-28 grid gap-8 md:grid-cols-2 md:items-center"
+            <Reveal key={p.slug} delay={i * 60}>
+              <Link
+                href={`/works/${p.slug}`}
+                className="group grid gap-6 rounded-2xl border border-line p-5 transition-colors hover:border-ember/30 md:grid-cols-[1fr_auto] md:items-center md:p-6"
               >
-                <ProjectVisual project={p} large />
-                <div className={i % 2 === 1 ? "md:order-first" : ""}>
-                  <div className="flex items-baseline justify-between gap-4">
-                    <h2 className="text-2xl font-medium tracking-tight md:text-3xl">
-                      {p.title}
-                    </h2>
-                    <span className="num-label shrink-0">{p.index}</span>
+                <div className="flex flex-col gap-4 md:flex-row md:items-center md:gap-8">
+                  <div className="hidden w-40 shrink-0 md:block">
+                    <ProjectVisual project={p} />
                   </div>
-                  <p className="mt-3 text-[13px] tracking-wide text-faint">
-                    {p.field} · {p.year}
-                  </p>
-                  <p className="mt-5 text-[15px] leading-[1.85] text-ember/90">
-                    {p.summary}
-                  </p>
-                  <div className="mt-5 space-y-4">
-                    {p.description.map((para, j) => (
-                      <p key={j} className="text-[14.5px] leading-[1.9] text-muted">
-                        {para}
-                      </p>
-                    ))}
+                  <div>
+                    <div className="flex items-baseline gap-4">
+                      <h2 className="text-xl font-medium tracking-tight text-ink transition-colors group-hover:text-ember md:text-2xl">
+                        {p.title}
+                      </h2>
+                      <span className="num-label hidden md:inline">{p.index}</span>
+                    </div>
+                    <p className="mt-1.5 text-[12.5px] tracking-wide text-faint">
+                      {p.field} · {p.year}
+                    </p>
+                    <p className="mt-3 max-w-xl text-[14px] leading-[1.8] text-muted">
+                      {p.summary}
+                    </p>
                   </div>
                 </div>
-              </article>
+                <div className="flex items-center justify-between md:flex-col md:items-end md:gap-3">
+                  <span className="num-label md:hidden">{p.index}</span>
+                  <span className="flex h-10 w-10 items-center justify-center rounded-full border border-line text-[15px] text-muted transition-all duration-300 group-hover:border-ember/50 group-hover:text-ember">
+                    →
+                  </span>
+                </div>
+              </Link>
             </Reveal>
           ))}
         </div>

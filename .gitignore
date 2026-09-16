@@ -26,6 +26,11 @@ yarn-error.log*
 # vercel
 .vercel
 
+# local dev tools
+shots/
+shot.js
+chrome-cdp/
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts
