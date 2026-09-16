@@ -6,9 +6,11 @@ export default function ProjectCard({ project }: { project: Project }) {
   return (
     <Link
       href={`/works/${project.slug}`}
-      className="glass glass-hover block overflow-hidden rounded-2xl"
+      className="glass glass-hover group block overflow-hidden rounded-2xl"
     >
-      <ProjectVisual project={project} />
+      <div className="overflow-hidden transition-transform duration-700 ease-out group-hover:scale-[1.03]">
+        <ProjectVisual project={project} />
+      </div>
       <div className="p-6 md:p-7">
         <div className="flex items-baseline justify-between gap-4">
           <h3 className="text-lg font-medium tracking-tight text-ink">
