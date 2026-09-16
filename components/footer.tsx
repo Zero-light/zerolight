@@ -1,3 +1,12 @@
+import Link from "next/link";
+
+const nav = [
+  { href: "/works", label: "作品" },
+  { href: "/journal", label: "日志" },
+  { href: "/glossary", label: "词汇表" },
+  { href: "/about", label: "关于" },
+];
+
 export default function Footer() {
   return (
     <footer className="relative z-10 border-t border-line">
@@ -12,14 +21,27 @@ export default function Footer() {
             </p>
           </div>
 
-          <div className="flex items-center gap-8 text-[13px] text-faint">
-            <a
-              href="mailto:hello@zerolight.fun"
-              className="transition-colors hover:text-ember"
-            >
-              hello@zerolight.fun
-            </a>
-            <span className="font-mono">© 2026</span>
+          <div className="flex flex-col items-start gap-5 md:items-end">
+            <nav className="flex flex-wrap items-center gap-x-6 gap-y-2 text-[13px] text-faint">
+              {nav.map((l) => (
+                <Link
+                  key={l.href}
+                  href={l.href}
+                  className="transition-colors hover:text-ember"
+                >
+                  {l.label}
+                </Link>
+              ))}
+            </nav>
+            <div className="flex items-center gap-8 text-[13px] text-faint">
+              <a
+                href="mailto:hello@zerolight.fun"
+                className="transition-colors hover:text-ember"
+              >
+                hello@zerolight.fun
+              </a>
+              <span className="font-mono">© 2026</span>
+            </div>
           </div>
         </div>
       </div>

@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { projects } from "@/lib/projects";
 import { posts } from "@/lib/posts";
+import { terms } from "@/lib/glossary";
 
 const BASE = "https://www.zerolight.fun";
 
@@ -10,6 +11,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: BASE, lastModified: now, changeFrequency: "weekly", priority: 1 },
     { url: `${BASE}/works`, lastModified: now, changeFrequency: "weekly", priority: 0.9 },
     { url: `${BASE}/journal`, lastModified: now, changeFrequency: "weekly", priority: 0.9 },
+    { url: `${BASE}/glossary`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
     { url: `${BASE}/about`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
     ...projects.map((p) => ({
       url: `${BASE}/works/${p.slug}`,
@@ -22,6 +24,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: now,
       changeFrequency: "monthly" as const,
       priority: 0.8,
+    })),
+    ...terms.map((t) => ({
+      url: `${BASE}/glossary#${t.slug}`,
+      lastModified: now,
+      changeFrequency: "monthly" as const,
+      priority: 0.6,
     })),
   ];
 }
