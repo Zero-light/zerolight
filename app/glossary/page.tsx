@@ -47,10 +47,15 @@ export default function GlossaryPage() {
                   </span>
                   {t.post ? (
                     <Link
-                      href={`/journal/${t.post.slug}`}
+                      href={
+                        t.post.kind === "work"
+                          ? `/works/${t.post.slug}`
+                          : `/journal/${t.post.slug}`
+                      }
                       className="group/link inline-flex items-center gap-2 text-[12.5px] text-ember/80 transition-colors hover:text-ember"
                     >
-                      阅读 · {t.post.title}
+                      {t.post.kind === "work" ? "阅读 · 作品 " : "阅读 · "}
+                      {t.post.title}
                       <span className="transition-transform duration-300 group-hover/link:translate-x-0.5">
                         →
                       </span>

@@ -3,7 +3,7 @@ export type Term = {
   word: string;
   en: string;
   def: string;
-  post?: { slug: string; title: string };
+  post?: { slug: string; title: string; kind?: "post" | "work" };
 };
 
 export const terms: Term[] = [
@@ -59,7 +59,7 @@ export const terms: Term[] = [
     word: "轮廓",
     en: "Silhouette",
     def: "光退场后依然清晰的存在。当日蚀发生，我们才真正看见形状——克制有时是移除光源。",
-    post: { slug: "eclipse-tide", title: "Eclipse Tide" },
+    post: { slug: "eclipse-tide", title: "Eclipse Tide", kind: "work" },
   },
   {
     slug: "rhythm",

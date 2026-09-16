@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import ReadingProgress from "@/components/reading-progress";
 import { posts } from "@/lib/posts";
+import { terms } from "@/lib/glossary";
 
 type Params = { slug: string };
 
@@ -30,6 +31,9 @@ export default function PostPage({ params }: { params: Params }) {
 
   const prev = posts[(index - 1 + posts.length) % posts.length];
   const next = posts[(index + 1) % posts.length];
+  const related = terms.filter(
+    (t) => t.post?.slug === post.slug && t.post.kind !== "work"
+  );
 
   return (
     <div className="pt-36 pb-24 md:pt-44">
@@ -54,6 +58,33 @@ export default function PostPage({ params }: { params: Params }) {
         </div>
 
         <div className="hairline my-14" />
+
+        {related.length > 0 && (
+          <div className="mb-14">
+            <p className="num-label">相关词汇 / Related Terms</p>
+            <div className="mt-5 grid gap-4 sm:grid-cols-2">
+              {related.map((t) => (
+                <Link
+                  key={t.slug}
+                  href={`/glossary#${t.slug}`}
+                  className="group rounded-2xl border border-line p-6 transition-colors hover:border-ember/30"
+                >
+                  <div className="flex items-baseline gap-3">
+                    <span className="text-xl font-medium tracking-tight text-ink transition-colors group-hover:text-ember">
+                      {t.word}
+                    </span>
+                    <span className="font-mono text-[10px] tracking-[0.18em] text-faint uppercase">
+                      {t.en}
+                    </span>
+                  </div>
+                  <p className="mt-3 text-[13.5px] leading-[1.85] text-muted">
+                    {t.def}
+                  </p>
+                </Link>
+              ))}
+            </div>
+          </div>
+        )}
 
         {/* 上下篇导航 */}
         <div className="grid gap-4 sm:grid-cols-2">
