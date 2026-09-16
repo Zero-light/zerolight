@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Reveal from "@/components/reveal";
-import PostCard from "@/components/post-card";
+import JournalFilter from "@/components/journal-filter";
 import { posts } from "@/lib/posts";
 
 export const metadata: Metadata = {
@@ -24,11 +24,7 @@ export default function JournalPage() {
         </Reveal>
 
         <div className="mt-16">
-          {posts.map((post, i) => (
-            <Reveal key={post.slug} delay={i * 60}>
-              <PostCard post={post} />
-            </Reveal>
-          ))}
+          <JournalFilter posts={posts} />
         </div>
       </div>
     </div>

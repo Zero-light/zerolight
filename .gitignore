@@ -30,6 +30,7 @@ yarn-error.log*
 shots/
 shot.js
 menu-test.js
+filter-test.js
 chrome-cdp/
 
 # typescript
