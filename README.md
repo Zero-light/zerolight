@@ -23,17 +23,18 @@
 ```bash
 npm install
 npm run dev      # http://localhost:3000
-npm run build    # 生产构建（全静态导出 35 个 URL）
+npm run build    # 生产构建（全静态导出 36 个 URL）
 npm start        # 本地生产预览
 ```
 
 ## 部署
 
-推送到 `main` 分支即触发 Vercel 自动部署。SEO 已配置：sitemap.xml（35 URL）、robots.txt、RSS feed（12 篇全文）、OpenGraph 图、PWA manifest。
+推送到 `main` 分支即触发 Vercel 自动部署。SEO 已配置：sitemap.xml（36 URL）、robots.txt、RSS feed（12 篇全文）、OpenGraph 图、PWA manifest。
 
 ---
 
 © 2026 zerolight. 有一束光，值得被留下。
+
 
 
 
