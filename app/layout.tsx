@@ -14,6 +14,9 @@ export const metadata: Metadata = {
   description:
     "zerolight（零光）是一个极简主义数字设计工作室。我们相信最好的设计是一种克制：在信息爆炸的时代，留白是最有力的声明。",
   keywords: ["zerolight", "极简设计", "界面设计", "设计工作室", "动效研究"],
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     type: "website",
     url: "https://www.zerolight.fun",

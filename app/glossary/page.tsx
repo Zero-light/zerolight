@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   title: "词汇表",
   description:
     "zerolight 的设计词汇表：光、零、留白、呼吸、克制、精确——十二个词，理解我们如何谈论光与界面。",
+  alternates: { canonical: "/glossary" },
 };
 
 export default function GlossaryPage() {

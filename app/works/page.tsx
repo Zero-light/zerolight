@@ -7,6 +7,7 @@ import { projects } from "@/lib/projects";
 export const metadata: Metadata = {
   title: "作品",
   description: "zerolight 的概念设计实验：光栅、字体、动效与色彩。",
+  alternates: { canonical: "/works" },
 };
 
 export default function WorksPage() {

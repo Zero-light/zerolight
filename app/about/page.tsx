@@ -4,6 +4,7 @@ import Reveal from "@/components/reveal";
 export const metadata: Metadata = {
   title: "关于",
   description: "zerolight 品牌故事：零光的意义、方法与原则。",
+  alternates: { canonical: "/about" },
 };
 
 export default function AboutPage() {
