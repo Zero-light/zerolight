@@ -41,15 +41,20 @@ export default function JournalFilter({ posts }: { posts: Post[] }) {
 
       {/* 文章列表 */}
       <div className="mt-12">
-        {filtered.map((post) => (
+        {filtered.map((post, i) => (
           <Link
             key={post.slug}
             href={`/journal/${post.slug}`}
             className="group block border-b border-line py-8 transition-colors first:border-t"
           >
             <div className="flex flex-col gap-3 md:flex-row md:items-baseline md:justify-between">
-              <h3 className="text-[19px] font-medium tracking-tight text-ink transition-colors group-hover:text-ember">
+              <h3 className="flex items-center gap-3 text-[19px] font-medium tracking-tight text-ink transition-colors group-hover:text-ember">
                 {post.title}
+                {i < 3 && active === "全部" && (
+                  <span className="rounded-full border border-ember/40 bg-ember/8 px-2 py-0.5 font-mono text-[9.5px] tracking-[0.18em] text-ember">
+                    NEW
+                  </span>
+                )}
               </h3>
               <div className="flex shrink-0 items-center gap-4 font-mono text-[11.5px] tracking-widest text-faint">
                 <span className="rounded-full border border-line px-2 py-0.5 text-[10px] tracking-wide text-faint/80">
