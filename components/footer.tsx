@@ -4,6 +4,7 @@ const nav = [
   { href: "/works", label: "作品" },
   { href: "/journal", label: "日志" },
   { href: "/glossary", label: "词汇表" },
+  { href: "/this-site", label: "本站" },
   { href: "/about", label: "关于" },
 ];
 

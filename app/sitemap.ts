@@ -12,6 +12,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/works`, lastModified: now, changeFrequency: "weekly", priority: 0.9 },
     { url: `${BASE}/journal`, lastModified: now, changeFrequency: "weekly", priority: 0.9 },
     { url: `${BASE}/glossary`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${BASE}/this-site`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
     { url: `${BASE}/about`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
     ...projects.map((p) => ({
       url: `${BASE}/works/${p.slug}`,
