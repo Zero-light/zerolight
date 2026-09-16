@@ -36,6 +36,7 @@ perf-test.js
 eclipse-shot.js
 work-visual-check.js
 walkthrough.js
+hero-check.js
 chrome-cdp/
 
 # typescript
