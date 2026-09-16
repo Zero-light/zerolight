@@ -32,6 +32,7 @@ shot.js
 menu-test.js
 filter-test.js
 glossary-shot.js
+perf-test.js
 chrome-cdp/
 
 # typescript
