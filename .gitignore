@@ -33,6 +33,7 @@ menu-test.js
 filter-test.js
 glossary-shot.js
 perf-test.js
+eclipse-shot.js
 chrome-cdp/
 
 # typescript
