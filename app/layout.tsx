@@ -22,11 +22,20 @@ export const metadata: Metadata = {
     description:
       "以光为尺，设计克制。极简主义数字设计工作室。",
     locale: "zh_CN",
+    images: [
+      {
+        url: "/opengraph-image.png",
+        width: 1200,
+        height: 630,
+        alt: "zerolight — 以光为尺的极简设计工作室",
+      },
+    ],
   },
   twitter: {
-    card: "summary",
+    card: "summary_large_image",
     title: "zerolight",
     description: "以光为尺，设计克制。",
+    images: ["/opengraph-image.png"],
   },
   appleWebApp: {
     title: "zerolight",

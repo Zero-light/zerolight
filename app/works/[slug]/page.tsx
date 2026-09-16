@@ -21,6 +21,12 @@ export async function generateMetadata({
   return {
     title: project.title,
     description: project.summary,
+    openGraph: {
+      type: "article",
+      title: `${project.title} — zerolight`,
+      description: project.summary,
+      images: ["/opengraph-image.png"],
+    },
   };
 }
 
