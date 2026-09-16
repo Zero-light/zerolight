@@ -38,6 +38,23 @@ body {
   background: #3a382f;
 }
 
+@keyframes page-fade {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  main {
+    animation: none !important;
+  }
+}
+
 /* ---------- 光标聚光 ---------- */
 .spotlight-layer {
   position: fixed;

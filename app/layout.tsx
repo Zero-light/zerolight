@@ -4,6 +4,7 @@ import Header from "@/components/header";
 import Footer from "@/components/footer";
 import Spotlight from "@/components/spotlight";
 import BackToTop from "@/components/back-to-top";
+import PageTransition from "@/components/page-transition";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.zerolight.fun"),
@@ -96,6 +97,7 @@ export default function RootLayout({
         </div>
 
         <BackToTop />
+        <PageTransition />
 
         <script
           type="application/ld+json"
