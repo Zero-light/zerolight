@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import Reveal from "@/components/reveal";
 import JournalFilter from "@/components/journal-filter";
 import { posts } from "@/lib/posts";
@@ -27,6 +28,23 @@ export default function JournalPage() {
         <div className="mt-16">
           <JournalFilter posts={posts} />
         </div>
+
+        <Reveal>
+          <div className="mt-14 flex items-center justify-between border-t border-line pt-8">
+            <p className="text-[13.5px] text-faint">
+              十三篇，每篇都经过反复删减。宁缺毋滥。
+            </p>
+            <Link
+              href="/feed.xml"
+              className="group inline-flex items-center gap-2 text-[13.5px] text-muted transition-colors hover:text-ember"
+            >
+              订阅 RSS
+              <span className="transition-transform duration-300 group-hover:translate-x-0.5">
+                →
+              </span>
+            </Link>
+          </div>
+        </Reveal>
       </div>
     </div>
   );
