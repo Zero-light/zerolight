@@ -93,6 +93,34 @@ export default function RootLayout({
         </div>
 
         <BackToTop />
+
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@graph": [
+                {
+                  "@type": "WebSite",
+                  name: "zerolight",
+                  alternateName: "零光",
+                  url: "https://www.zerolight.fun",
+                  description:
+                    "以光为尺，设计克制。极简主义数字设计工作室。",
+                  inLanguage: "zh-CN",
+                },
+                {
+                  "@type": "Organization",
+                  name: "zerolight",
+                  url: "https://www.zerolight.fun",
+                  foundingDate: "2026",
+                  email: "hello@zerolight.fun",
+                  slogan: "以光为尺，设计克制。",
+                },
+              ],
+            }),
+          }}
+        />
       </body>
     </html>
   );

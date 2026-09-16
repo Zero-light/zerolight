@@ -149,6 +149,22 @@ export default function ProjectPage({ params }: { params: Params }) {
             返回全部作品
           </Link>
         </div>
+
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "CreativeWork",
+              name: project.title,
+              description: project.summary,
+              about: project.field,
+              creator: { "@type": "Organization", name: "zerolight" },
+              url: `https://www.zerolight.fun/works/${project.slug}`,
+              dateCreated: `${project.year}-01-01`,
+            }),
+          }}
+        />
       </article>
     </div>
   );

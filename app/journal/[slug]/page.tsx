@@ -57,6 +57,24 @@ export default function PostPage({ params }: { params: Params }) {
 
         <div className="hairline my-12" />
 
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "BlogPosting",
+              headline: post.title,
+              description: post.excerpt,
+              datePublished: `${post.date}.01`,
+              inLanguage: "zh-CN",
+              author: { "@type": "Organization", name: "zerolight" },
+              publisher: { "@type": "Organization", name: "zerolight" },
+              url: `https://www.zerolight.fun/journal/${post.slug}`,
+              mainEntityOfPage: `https://www.zerolight.fun/journal/${post.slug}`,
+            }),
+          }}
+        />
+
         <div className="prose-light space-y-6">
           {post.body.map((para, i) => (
             <p key={i}>{para}</p>
