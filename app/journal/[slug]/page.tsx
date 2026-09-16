@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import ReadingProgress from "@/components/reading-progress";
+import KeyboardNav from "@/components/keyboard-nav";
 import { posts } from "@/lib/posts";
 import { terms } from "@/lib/glossary";
 
@@ -147,6 +148,11 @@ export default function PostPage({ params }: { params: Params }) {
             zerolight / {post.slug}
           </span>
         </div>
+
+        <KeyboardNav
+          prev={`/journal/${prev.slug}`}
+          next={`/journal/${next.slug}`}
+        />
       </article>
     </div>
   );

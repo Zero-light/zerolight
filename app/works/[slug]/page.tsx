@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import ProjectVisual from "@/components/project-visual";
+import KeyboardNav from "@/components/keyboard-nav";
 import { projects } from "@/lib/projects";
 import { terms } from "@/lib/glossary";
 
@@ -150,6 +151,11 @@ export default function ProjectPage({ params }: { params: Params }) {
             返回全部作品
           </Link>
         </div>
+
+        <KeyboardNav
+          prev={`/works/${prev.slug}`}
+          next={`/works/${next.slug}`}
+        />
 
         <script
           type="application/ld+json"
