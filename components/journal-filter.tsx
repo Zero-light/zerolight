@@ -1,12 +1,26 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import type { Post } from "@/lib/posts";
 
 export default function JournalFilter({ posts }: { posts: Post[] }) {
   const tags = ["全部", ...Array.from(new Set(posts.map((p) => p.tag)))];
-  const [active, setActive] = useState("全部");
+  const [active, setActive] = useState(() => {
+    if (typeof window === "undefined") return "全部";
+    const t = new URLSearchParams(window.location.search).get("tag");
+    return t && tags.includes(t) ? t : "全部";
+  });
+
+  useEffect(() => {
+    const url = new URL(window.location.href);
+    if (active === "全部") {
+      url.searchParams.delete("tag");
+    } else {
+      url.searchParams.set("tag", active);
+    }
+    window.history.replaceState(null, "", url.toString());
+  }, [active]);
 
   const filtered = useMemo(
     () => (active === "全部" ? posts : posts.filter((p) => p.tag === active)),
