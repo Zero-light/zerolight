@@ -48,6 +48,13 @@ export const terms: Term[] = [
     post: { slug: "the-stubbornness-of-a-pixel", title: "一个像素的固执" },
   },
   {
+    slug: "millisecond",
+    word: "毫秒",
+    en: "Millisecond",
+    def: "动效的三档刻度：100ms 是手感，250ms 是叙事，400ms 是情感。超过 500ms，用户只会感到等待。",
+    post: { slug: "motion-in-milliseconds", title: "动效的毫秒刻度" },
+  },
+  {
     slug: "dark",
     word: "暗",
     en: "Dark",
@@ -60,6 +67,13 @@ export const terms: Term[] = [
     en: "Silhouette",
     def: "光退场后依然清晰的存在。当日蚀发生，我们才真正看见形状——克制有时是移除光源。",
     post: { slug: "eclipse-tide", title: "Eclipse Tide", kind: "work" },
+  },
+  {
+    slug: "texture",
+    word: "质感",
+    en: "Texture",
+    def: "界面语言的物理直觉。不是模仿材质，而是借用材质的规律：光怎么穿过、怎么折射、怎么在边缘留下一道细光。",
+    post: { slug: "still-water", title: "Still Water", kind: "work" },
   },
   {
     slug: "rhythm",

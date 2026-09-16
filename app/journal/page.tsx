@@ -6,7 +6,7 @@ import { posts } from "@/lib/posts";
 export const metadata: Metadata = {
   title: "日志",
   description:
-    "zerolight 的设计随笔：留白、深色界面、微交互、排版与光的隐喻，十一篇关于设计取舍的长期思考。",
+    "zerolight 的设计随笔：留白、深色界面、微交互、排版与光的隐喻，十二篇关于设计取舍的长期思考。",
 };
 
 export default function JournalPage() {

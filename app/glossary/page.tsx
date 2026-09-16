@@ -6,7 +6,7 @@ import { terms } from "@/lib/glossary";
 export const metadata: Metadata = {
   title: "词汇表",
   description:
-    "zerolight 的设计词汇表：光、零、留白、呼吸、克制、精确——十个词，理解我们如何谈论光与界面。",
+    "zerolight 的设计词汇表：光、零、留白、呼吸、克制、精确——十二个词，理解我们如何谈论光与界面。",
 };
 
 export default function GlossaryPage() {
@@ -19,7 +19,7 @@ export default function GlossaryPage() {
             我们如何谈论光
           </h1>
           <p className="mt-6 max-w-xl text-[15.5px] leading-[1.9] text-muted">
-            十个词，构成 zerolight 的设计语言。每一个词都是一种判断——
+            十二个词，构成 zerolight 的设计语言。每一个词都是一种判断——
             关于什么值得留下，什么值得发光。
           </p>
         </Reveal>
