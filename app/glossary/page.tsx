@@ -28,7 +28,10 @@ export default function GlossaryPage() {
         <div className="mt-16 grid gap-px overflow-hidden rounded-2xl border border-line bg-line sm:grid-cols-2">
           {terms.map((t, i) => (
             <Reveal key={t.slug} delay={(i % 2) * 70}>
-              <div className="group flex h-full flex-col justify-between bg-void p-8 md:p-10">
+              <div
+                id={t.slug}
+                className="group flex h-full scroll-mt-32 flex-col justify-between bg-void p-8 md:p-10"
+              >
                 <div>
                   <div className="flex items-baseline gap-4">
                     <h2 className="text-3xl font-medium tracking-tight text-ink md:text-4xl">
