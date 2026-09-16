@@ -3,19 +3,21 @@ import Reveal from "@/components/reveal";
 import SectionHead from "@/components/section-head";
 import ProjectCard from "@/components/project-card";
 import PostCard from "@/components/post-card";
+import HeroFx from "@/components/hero-fx";
 import { projects } from "@/lib/projects";
 import { posts } from "@/lib/posts";
 
 export default function Home() {
   const featured = projects.slice(0, 3);
-  const featuredPosts = posts.slice(0, 2);
+  const featuredPosts = posts.slice(0, 3);
 
   return (
     <div>
       {/* ---------- Hero ---------- */}
       <section className="relative flex min-h-[92vh] flex-col justify-center overflow-hidden">
         <div className="stardust" aria-hidden />
-        <div className="mx-auto w-full max-w-6xl px-6 md:px-8">
+        <HeroFx />
+        <div id="hero-content" className="mx-auto w-full max-w-6xl px-6 md:px-8 will-change-transform">
           <Reveal>
             <p className="num-label flex items-center gap-3">
               <span className="inline-block h-1.5 w-1.5 rounded-full bg-ember animate-slow-pulse" />
