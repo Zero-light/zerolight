@@ -22,8 +22,7 @@ const numbers: [string, string][] = [
   ["0", "张位图"],
   ["0", "个运行时依赖"],
   ["~90", "KB 首屏体积"],
-  ["12", "篇随笔"],
-  ["6", "件作品"],
+  ["13", "篇随笔"],  ["6", "件作品"],
 ];
 
 export default function ThisSitePage() {
