@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import ProjectVisual from "@/components/project-visual";
 import { projects } from "@/lib/projects";
+import { terms } from "@/lib/glossary";
 
 type Params = { slug: string };
 
@@ -30,6 +31,9 @@ export default function ProjectPage({ params }: { params: Params }) {
 
   const prev = projects[(index - 1 + projects.length) % projects.length];
   const next = projects[(index + 1) % projects.length];
+  const related = terms.filter(
+    (t) => t.post?.slug === project.slug && t.post.kind === "work"
+  );
 
   return (
     <div className="pt-36 pb-24 md:pt-44">
@@ -77,6 +81,34 @@ export default function ProjectPage({ params }: { params: Params }) {
             </div>
           ))}
         </div>
+
+        {/* 相关词汇 */}
+        {related.length > 0 && (
+          <div className="mt-14">
+            <p className="num-label">相关词汇 / Related Terms</p>
+            <div className="mt-5 grid gap-4 sm:grid-cols-2">
+              {related.map((t) => (
+                <Link
+                  key={t.slug}
+                  href={`/glossary#${t.slug}`}
+                  className="group rounded-2xl border border-line p-6 transition-colors hover:border-ember/30"
+                >
+                  <div className="flex items-baseline gap-3">
+                    <span className="text-xl font-medium tracking-tight text-ink transition-colors group-hover:text-ember">
+                      {t.word}
+                    </span>
+                    <span className="font-mono text-[10px] tracking-[0.18em] text-faint uppercase">
+                      {t.en}
+                    </span>
+                  </div>
+                  <p className="mt-3 text-[13.5px] leading-[1.85] text-muted">
+                    {t.def}
+                  </p>
+                </Link>
+              ))}
+            </div>
+          </div>
+        )}
 
         {/* 上下篇导航 */}
         <div className="mt-16 grid gap-4 border-t border-line pt-10 sm:grid-cols-2">
