@@ -7,7 +7,7 @@
 ## 内容
 
 - **作品** — 6 组关于「克制」的设计研究：信息层级、排版、动效、色彩、光影（含详情页与上下篇导航）
-- **日志** — 8 篇设计随笔：留白、深色界面、微交互、光的隐喻（支持按标签筛选）
+- **日志** — 9 篇设计随笔：留白、深色界面、微交互、光的隐喻（支持按标签筛选）
 - **词汇表** — 10 个词构成我们的设计语言，与随笔双向关联
 - **关于** — 品牌故事、方法四步、设计原则与数字一览
 
@@ -23,13 +23,13 @@
 ```bash
 npm install
 npm run dev      # http://localhost:3000
-npm run build    # 生产构建（全静态导出 29 个 URL）
+npm run build    # 生产构建（全静态导出 30 个 URL）
 npm start        # 本地生产预览
 ```
 
 ## 部署
 
-推送到 `main` 分支即触发 Vercel 自动部署。SEO 已配置：sitemap.xml（29 URL）、robots.txt、RSS feed（8 篇全文）、OpenGraph 图、PWA manifest。
+推送到 `main` 分支即触发 Vercel 自动部署。SEO 已配置：sitemap.xml（30 URL）、robots.txt、RSS feed（9 篇全文）、OpenGraph 图、PWA manifest。
 
 ---
 

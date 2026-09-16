@@ -83,7 +83,7 @@ export default function AboutPage() {
             <div className="mt-8 grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-line bg-line md:grid-cols-4">
               {[
                 ["06", "组设计实验"],
-                ["08", "篇设计随笔"],
+                ["09", "篇设计随笔"],
                 ["01", "个立场：克制"],
                 ["04", "步设计方法"],
               ].map(([n, d]) => (
