@@ -18,6 +18,7 @@ export default function ProjectVisual({ project, large = false }: Props) {
       <GravityCursor show={project.visual === "gravity"} />
       <Prism show={project.visual === "prism"} />
       <StillWater show={project.visual === "still"} />
+      <EclipseTide show={project.visual === "eclipse"} />
     </div>
   );
 }
@@ -162,6 +163,106 @@ function StillWater({ show }: { show: boolean }) {
           style={{ background: "rgba(255,255,255,0.06)" }}
         />
       </div>
+    </div>
+  );
+}
+
+function EclipseTide({ show }: { show: boolean }) {
+  if (!show) return null;
+  return (
+    <div className="absolute inset-0">
+      {/* 星点 */}
+      {[
+        ["22%", "30%"],
+        ["72%", "22%"],
+        ["84%", "58%"],
+        ["30%", "70%"],
+        ["12%", "52%"],
+        ["55%", "84%"],
+        ["90%", "80%"],
+      ].map(([x, y], i) => (
+        <span
+          key={i}
+          className="absolute h-[2px] w-[2px] rounded-full"
+          style={{
+            left: x,
+            top: y,
+            background: i % 2 === 0 ? "rgba(233,230,222,0.55)" : "rgba(240,201,138,0.5)",
+          }}
+        />
+      ))}
+
+      {/* 外光环 */}
+      <div
+        className="absolute left-1/2 top-1/2 rounded-full"
+        style={{
+          width: "64%",
+          height: "64%",
+          transform: "translate(-50%, -50%)",
+          border: "1.5px solid rgba(240,201,138,0.22)",
+        }}
+      />
+      <div
+        className="absolute left-1/2 top-1/2 rounded-full"
+        style={{
+          width: "46%",
+          height: "46%",
+          transform: "translate(-50%, -50%)",
+          border: "1px solid rgba(240,201,138,0.14)",
+        }}
+      />
+
+      {/* 月面（蚀） */}
+      <div
+        className="absolute left-1/2 top-1/2 overflow-hidden rounded-full"
+        style={{
+          width: "38%",
+          height: "38%",
+          transform: "translate(-50%, -50%)",
+          background:
+            "radial-gradient(circle at 38% 32%, #F6E3B4 0%, #F0C98A 38%, #B98A4E 68%, #6E5632 88%, #3A2F1E 100%)",
+          boxShadow: "0 0 70px rgba(240,201,138,0.28)",
+        }}
+      >
+        {/* 暗部蚀影 */}
+        <div
+          className="absolute"
+          style={{
+            width: "112%",
+            height: "112%",
+            left: "30%",
+            top: "-6%",
+            borderRadius: "50%",
+            background:
+              "radial-gradient(circle at 40% 30%, #0B0B0F 55%, rgba(11,11,15,0.92) 70%, transparent 78%)",
+          }}
+        />
+        {/* 月面细纹 */}
+        <div
+          className="absolute left-[16%] top-[22%] h-[3px] w-[18%] rounded-full"
+          style={{ background: "rgba(233,230,222,0.35)", transform: "rotate(-14deg)" }}
+        />
+        <div
+          className="absolute left-[22%] top-[40%] h-[2px] w-[12%] rounded-full"
+          style={{ background: "rgba(233,230,222,0.22)", transform: "rotate(8deg)" }}
+        />
+      </div>
+
+      {/* 蚀后轮廓光 */}
+      <div
+        className="absolute left-1/2 top-1/2 rounded-full"
+        style={{
+          width: "40%",
+          height: "40%",
+          transform: "translate(-50%, -50%)",
+          background:
+            "conic-gradient(from 210deg, transparent 0deg, rgba(240,201,138,0.5) 30deg, transparent 90deg, transparent 360deg)",
+          WebkitMaskImage:
+            "radial-gradient(circle, transparent 86%, black 88%, black 94%, transparent 96%)",
+          maskImage:
+            "radial-gradient(circle, transparent 86%, black 88%, black 94%, transparent 96%)",
+        }}
+      />
     </div>
   );
 }

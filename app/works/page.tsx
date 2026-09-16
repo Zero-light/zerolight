@@ -19,8 +19,8 @@ export default function WorksPage() {
             设计实验
           </h1>
           <p className="mt-6 max-w-xl text-[15.5px] leading-[1.9] text-muted">
-            五组关于「克制」的研究——以光为尺度，探索信息层级、排版、动效与色彩
-            在界面中的最小有效表达。
+            六组关于「克制」的研究——以光为尺度，探索信息层级、排版、动效、色彩
+            与光影在界面中的最小有效表达。
           </p>
         </Reveal>
 

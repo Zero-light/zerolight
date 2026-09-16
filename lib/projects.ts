@@ -7,7 +7,7 @@ export type Project = {
   summary: string;
   description: string[];
   accent: string;
-  visual: "lumen" | "whisper" | "gravity" | "prism" | "still";
+  visual: "lumen" | "whisper" | "gravity" | "prism" | "still" | "eclipse";
 };
 
 export const projects: Project[] = [
@@ -83,5 +83,20 @@ export const projects: Project[] = [
     ],
     accent: "rgba(150,200,230,0.4)",
     visual: "still",
+  },
+  {
+    slug: "eclipse-tide",
+    index: "06",
+    title: "Eclipse Tide",
+    field: "光效 / 视觉研究",
+    year: "2026",
+    summary: "当日蚀发生，光被遮蔽的瞬间——轮廓、阴影与留白成为主角。",
+    description: [
+      "「零光」并不是没有光，而是光暂时退场。Eclipse Tide 研究的是界面里那个最安静的瞬间：当所有高亮熄灭，用户的目光会落在哪里。",
+      "项目以日蚀为隐喻构建了一组深空界面原型：极暗的底、一圈逐渐收窄的光环、以及被遮挡后依然清晰的轮廓线。强调的不是「发光」，而是「光曾经在过这里」。",
+      "研究发现，当界面主动移除光源，用户对轮廓与阴影的敏感度会显著上升——克制在此刻不再是风格，而是一种注意力管理。",
+    ],
+    accent: "rgba(240,201,138,0.4)",
+    visual: "eclipse",
   },
 ];

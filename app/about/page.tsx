@@ -76,6 +76,27 @@ export default function AboutPage() {
             ))}
           </div>
         </Reveal>
+
+        <Reveal>
+          <div className="mt-20">
+            <p className="num-label">以数字看 zerolight / In Numbers</p>
+            <div className="mt-8 grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-line bg-line md:grid-cols-4">
+              {[
+                ["06", "组设计实验"],
+                ["08", "篇设计随笔"],
+                ["01", "个立场：克制"],
+                ["04", "步设计方法"],
+              ].map(([n, d]) => (
+                <div key={d} className="bg-void px-8 py-10 text-center md:py-12">
+                  <p className="glow-text text-5xl font-semibold tracking-tightest md:text-6xl">
+                    {n}
+                  </p>
+                  <p className="mt-4 text-[13px] tracking-wide text-faint">{d}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </Reveal>
       </div>
     </div>
   );

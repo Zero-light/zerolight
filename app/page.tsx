@@ -147,7 +147,7 @@ export default function Home() {
             <SectionHead
               index="02 / 作品"
               title="精选实验"
-              sub="光栅、字体、动效与色彩——五组关于「克制」的设计研究。"
+              sub="光栅、字体、动效、色彩与日蚀——六组关于「克制」的设计研究。"
             />
           </Reveal>
 
