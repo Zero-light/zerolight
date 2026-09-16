@@ -12,7 +12,7 @@ const config: Config = {
         void: "#050507",
         ink: "#E9E6DE",
         muted: "#8A887F",
-        faint: "#55544E",
+        faint: "#6B6A63",
         line: "rgba(233,230,222,0.09)",
         ember: "#F0C98A",
         emberDim: "rgba(240,201,138,0.55)",
